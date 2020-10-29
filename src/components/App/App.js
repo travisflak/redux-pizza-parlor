@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import './App.css';
@@ -8,16 +9,23 @@ import SelectPizza from '../SelectPizza/SelectPizza';
 
 class App extends Component {
 
-  componentDidMount = () => {
-    this.getPizza();
-  }
 
-  getPizza = () => {
-    axios.get('/api/pizza').then((response) => {
-      console.log(response.data);
-    }).catch((error) => {
-      alert(error);
-    })
+  componentDidMount() { // react Component method
+    this.getPizzas();
+  }
+  getPizzas = () => {
+    // just like $.ajax()
+    axios({
+      method: 'GET',
+      url: '/api/pizza'
+    }).then((response) => {
+      console.log(response);
+      this.props.dispatch({ type: 'SET_PIZZAS', payload: response.data})
+      // response.data will be the array of artists
+      this.setState({
+        pizzas: response.data,
+      });
+    });
   }
 
   render() {
@@ -39,4 +47,11 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const mapStateToProps = (reduxState) => {
+  return{
+    reduxState
+  }
+}
+export default connect(mapStateToProps)(App);
+
+
