@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class SelectPizza extends Component {
-
+    state {
+        //might need a local state 
+    }
 
     selectedPizza = () => {
         this.props.dispatch({type: ‘ADD_ELEMENT’, payload: this.state.element})
@@ -11,24 +13,26 @@ class SelectPizza extends Component {
 
     render() {
         return (
+            // change screaming pizza list
+            <>
+                <div> 
+                    { props.reduxStore.PIZZALIST.map( (pizza, index) => 
+                        <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
+                            <img src={pizza.image_path}/>
+                            {pizza.name} {pizza.description} {pizza.price}
+                            <button onClick={(event) => this.toggledRomoveAdd(event)}>
 
-            <div>
-                { props.reduxStore.bookList.map( (pizza, index) => 
-          <li key={pizza.id}>{pizza.name} {pizza.description} {pizza.price} {pizza.image_path}</li>  
+                            </button> 
+                            {/* ternary operator */}
+                        </div>
+                    )}     
+                </div>
+                <button onClick={(event) => this.goToNextPage(event)}>
+                    {/* //write out browser change for next button, so write out a new function for goTo NextPage, above selectedPizza */}
+                    Next
+                </button>
+            </>
         )}
-
-
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                
-            </div>
-            //need a clickHandler for submit button
-            //need a way for text in input to be saved via setting up a state for input
-            //clickHandler will fire a action...if action = whatever to trigger a post request
-        )
-    }
 }
 
 
