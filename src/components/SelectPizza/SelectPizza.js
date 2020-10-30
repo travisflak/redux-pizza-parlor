@@ -3,8 +3,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class SelectPizza extends Component {
-    // state {
-    //     //might need a local state 
+
+    // const removeAdd= (state = [], action) => {
+    //     //which pizza am I looking at and have I already set that pizza
+    //     if (addPizza === true) {
+    //         return;
+    //     } 
+    //     else if(removePizza === true){
+    //     }
+    //     return;
     // }
 
     // selectedPizza = () => {
@@ -16,21 +23,18 @@ class SelectPizza extends Component {
             // change screaming pizza list
             <>
                 <div> 
-                    { this.props.reduxStore.PIZZALIST.map( (pizza, index) => 
+                    { this.props.reduxStore.pizzaReducer.map( (pizza, index) => 
+
                         <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
                             <img src={pizza.image_path}/>
                             {pizza.name} {pizza.description} {pizza.price}
-                            <button onClick={(event) => this.toggledRomoveAdd(event)}>
-
+                            <button onClick={(event) => this.removeAdd(event)}>
+                                
                             </button> 
                             {/* ternary operator */}
                         </div>
                     )}     
                 </div>
-                <button onClick={(event) => this.goToNextPage(event)}>
-                    {/* //write out browser change for next button, so write out a new function for goTo NextPage, above selectedPizza */}
-                    Next
-                </button>
             </>
         )}
 }
