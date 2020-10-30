@@ -29,7 +29,7 @@ npm run client
 
 The tasks for Base Mode are broken down further [on this Trello Board](https://trello.com/b/aWXfG8D6/redux-pizza-parlor). Take time before diving into the code to copy this board and build out the plan even further.
 
-After starting up the server, the following routes should be available. You can test them with Postman.
+[x]After starting up the server, the following routes should be available. You can test them with Postman.
 
 ### GET PIZZA  
 
