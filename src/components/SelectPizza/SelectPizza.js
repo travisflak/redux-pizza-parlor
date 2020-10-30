@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class SelectPizza extends Component {
-    state {
-        //might need a local state 
-    }
+    // state {
+    //     //might need a local state 
+    // }
 
-    selectedPizza = () => {
-        this.props.dispatch({type: ‘ADD_ELEMENT’, payload: this.state.element})
-    }
+    // selectedPizza = () => {
+    //     this.props.dispatch({type: ‘ADD_ELEMENT’, payload: this.state.element})
+    // }
 
     render() {
         return (
             // change screaming pizza list
             <>
                 <div> 
-                    { props.reduxStore.PIZZALIST.map( (pizza, index) => 
+                    { this.props.reduxStore.PIZZALIST.map( (pizza, index) => 
                         <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
                             <img src={pizza.image_path}/>
                             {pizza.name} {pizza.description} {pizza.price}

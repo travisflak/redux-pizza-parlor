@@ -70,6 +70,7 @@ class CustomerInfo extends Component {
     }
     render() {
         return (
+
             <>
             <form onSubmit={this.addInformation}>
                 <input onChange={this.handleNameChange} type ="text" placeholder="Name"/>
