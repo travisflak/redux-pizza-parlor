@@ -41,6 +41,10 @@ class App extends Component {
         {/* <SelectPizza/> */}
         {/* <Link to="/api/pizza">Next</Link> */}
         {/* <Route path="/customer" component={CustomerInfo}/> */}
+        <button onClick={(event) => this.goToNextPage(event)}>
+        {/* //write out browser change for next button, so write out a new function for goTo NextPage, above selectedPizza */}
+          Next
+        </button>
       </div>
       // </Router>
     );
