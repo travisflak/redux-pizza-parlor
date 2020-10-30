@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link, withRouter } from 'react-router-dom'
 import './App.css';
 
 import SelectPizza from '../SelectPizza/SelectPizza';
+import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 class App extends Component {
 
@@ -29,23 +30,22 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Prime Pizza</h1>
-        </header>
-        <br/>
-        <img src="images/pizza_photo.png"/>
-        <p>Pizza is great.</p>
-        {/* <SelectPizza/> */}
-        {/* <Link to="/api/pizza">Next</Link> */}
-        {/* <Route path="/customer" component={CustomerInfo}/> */}
-        <button onClick={(event) => this.goToNextPage(event)}>
-        {/* //write out browser change for next button, so write out a new function for goTo NextPage, above selectedPizza */}
-          Next
-        </button>
-      </div>
-      // </Router>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <Link className="homeLink" to="/"><h1 className="App-title">Prime Pizza</h1></Link>
+          </header>
+          <br/>
+          {/* <img src="images/pizza_photo.png"/> */}
+          <p>Pizza is great.</p>
+          {/* <SelectPizza/> */}
+
+          
+          <Link className="nextLink" to="/customer">Next</Link>
+
+          <Route path="/customer" component={CustomerInfo}/>
+        </div>
+      </Router>
     );
   }
 }
