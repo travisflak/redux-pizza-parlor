@@ -5,8 +5,6 @@ import App from './components/App/App';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'; 
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
 
 const pizzaReducer = (state = [], action) => {
 
