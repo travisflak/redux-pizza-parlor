@@ -16,9 +16,17 @@ const pizzaReducer = (state = [], action) => {
     }
     return state;
 }
+const customerInfoReducer = (state = [], action) => {
+    if (action.type === 'ADD_ORDER'){
+        return [...state, action.payload]
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
+        customerInfoReducer
     }),
     
 );
