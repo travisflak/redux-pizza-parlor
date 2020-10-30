@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import './App.css';
-import {connect} from 'react-redux';
 
 import SelectPizza from '../SelectPizza/SelectPizza';
 
