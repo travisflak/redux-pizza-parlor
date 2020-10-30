@@ -11,22 +11,16 @@ class SelectPizza extends Component {
 
     render() {
         return (
-
-            <div>
-                { props.reduxStore.bookList.map( (pizza, index) => 
-          <li key={pizza.id}>{pizza.name} {pizza.description} {pizza.price} {pizza.image_path}</li>  
+            // change screaming pizza list
+            <div> 
+                { props.reduxStore.PIZZALIST.map( (pizza, index) => 
+          <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
+              {pizza.name} {pizza.description} {pizza.price} {pizza.image_path}
+            </div>
+        //   <div  type='submit'>Submit</div>  //saving this for a button
         )}
-
-
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
-                <button onClick={(event) => this.handleSubmit(event)} type='submit'>Submit</button>
                 
             </div>
-            //need a clickHandler for submit button
-            //need a way for text in input to be saved via setting up a state for input
-            //clickHandler will fire a action...if action = whatever to trigger a post request
         )
     }
 }
