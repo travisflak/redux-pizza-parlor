@@ -24,11 +24,11 @@ class SelectPizza extends Component {
             <>
                 <div> 
                     { this.props.reduxStore.pizzaReducer.map( (pizza, index) => 
-                        <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
+                        <div key={pizza.id} onClick={(event) => this.selectPizza(event)}>
                             <img src={pizza.image_path}/>
                             {pizza.name} {pizza.description} {pizza.price}
                             <button onClick={(event) => this.removeAdd(event)}>
-                                
+                               
                             </button> 
                             {/* ternary operator */}
                         </div>
