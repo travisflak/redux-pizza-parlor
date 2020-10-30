@@ -8,8 +8,7 @@ class CustomerInfo extends Component {
             address: '',
             city: '',
             zip:0,
-            type: '',
-            time: ''
+            type: ''
         }
     }
     handleNameChange = (event) => {
@@ -50,14 +49,6 @@ class CustomerInfo extends Component {
             customerInfoAdd: {
                 ...this.state.customerInfoAdd,
                 zip: event.target.value
-            }
-        })
-    }
-    handleTypeChange=(event) => {
-        this.setState({
-            customerInfoAdd: {
-                ...this.state.customerInfoAdd,
-                time: currentTime
             }
         })
     }
