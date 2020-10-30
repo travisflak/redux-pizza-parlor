@@ -5,7 +5,10 @@ import App from './components/App/App';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'; 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 const pizzaReducer = (state = [], action) => {
 
     if(action.type === 'SET_PIZZA') {
