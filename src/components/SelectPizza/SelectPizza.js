@@ -24,6 +24,7 @@ class SelectPizza extends Component {
             <>
                 <div> 
                     { this.props.reduxStore.pizzaReducer.map( (pizza, index) => 
+
                         <div key={pizza.id} onClick={(event) => this.selectedPizza(event)}>
                             <img src={pizza.image_path}/>
                             {pizza.name} {pizza.description} {pizza.price}

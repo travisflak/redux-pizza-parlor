@@ -21,3 +21,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.nextLink {
+  text-decoration: none;
+  border: 2px solid cornflowerblue;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  color: white;
+  padding: 3px 6px;
+}
+
+.homeLink {
+  text-decoration: none;
+  color: white;
+}
